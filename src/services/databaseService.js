@@ -1,7 +1,6 @@
 const Database = require("better-sqlite3");
 
-const db = new Database("deepcompliance.db");
-
+const db = new Database(process.env.DATABASE_PATH || "deepcompliance.db");
 db.prepare(`
   CREATE TABLE IF NOT EXISTS events (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
